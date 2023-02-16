@@ -1,0 +1,22 @@
+service: todo-list-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  api:
+    handler: src/index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+custom:
+  serverlessPluginTypescript:
+    tsConfigFileLocation: './tsconfig.json'
