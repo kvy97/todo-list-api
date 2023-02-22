@@ -1,21 +1,59 @@
-service: todo-list-api
+service: todos-api
 frameworkVersion: '3'
+useDotenv: true
 
 provider:
   name: aws
   runtime: nodejs18.x
+  region: eu-west-3
+  environment:
+    DB_HOST: ${env:DB_HOST}
+    DB_PORT: ${env:DB_PORT}
+    DB_USER: ${env:DB_USER}
+    DB_PASSWORD: ${env:DB_PASSWORD}
+    DB_NAME: ${env:DB_NAME}
 
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
 
 functions:
-  api:
-    handler: src/index.handler
+  getTodos:
+    handler: src/handler.getTodos
     events:
       - httpApi:
-          path: /
+          path: /todos
           method: get
+  getTodo:
+    handler: src/handler.getTodo
+    events:
+      - httpApi:
+          path: /todos/{id}
+          method: get
+  createTodo:
+    handler: src/handler.createTodo
+    events:
+      - httpApi:
+          path: /todos
+          method: post
+  updateTodo:
+    handler: src/handler.updateTodo
+    events:
+      - httpApi:
+          path: /todos/{id}
+          method: put
+  deleteTodo:
+    handler: src/handler.deleteTodo
+    events:
+      - httpApi:
+          path: /todos/{id}
+          method: delete
+  initDatabase:
+    handler: src/handler.initDatabase
+    events:
+      - httpApi:
+          path: /setup
+          method: post
 
 custom:
   serverlessPluginTypescript:

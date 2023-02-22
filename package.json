@@ -1,6 +1,6 @@
 {
   "name": "todo-list-api",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "scripts": {},
   "main": "handler.js",
   "devDependencies": {
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/kvy97/todo-list-api/issues"
   },
-  "homepage": "https://github.com/kvy97/todo-list-api#readme"
+  "homepage": "https://github.com/kvy97/todo-list-api#readme",
+  "dependencies": {
+    "serverless-postgres": "^2.0.2"
+  }
 }

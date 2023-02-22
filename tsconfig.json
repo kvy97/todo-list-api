@@ -4,12 +4,10 @@
     "lib": [
       "esnext"
     ],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "paths": {
-      "@/*": [
+      "#/*": [
         "./src/*"
       ]
     },
@@ -20,10 +18,6 @@
     "sourceRoot": "/",
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "skipLibCheck": true
