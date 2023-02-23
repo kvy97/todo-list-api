@@ -6,16 +6,9 @@
     ],
     "module": "commonjs",
     "moduleResolution": "node",
-    "paths": {
-      "#/*": [
-        "./src/*"
-      ]
-    },
     "resolveJsonModule": true,
     "allowJs": true,
-    "outDir": "./dist",
     "removeComments": true,
-    "sourceRoot": "/",
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
